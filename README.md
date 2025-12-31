@@ -1,6 +1,6 @@
 # ResumeStudio
 
-![ResumeStudio Banner](https://github.com/user-attachments/assets/95d817d8-6d61-41a3-8298-7d57fddec1cd)
+
 
 **Build ATS-Friendly Resumes in Minutes**
 
