@@ -10,7 +10,7 @@ export function BuyMeCoffeeButton() {
     const [message, setMessage] = useState("");
     const [isMonthly, setIsMonthly] = useState(false);
 
-    const quickAmounts = [40, 400, 800];
+    const quickAmounts = [129, 1349, 2249];
 
     const handleSupport = () => {
         const finalAmount = amount || "40";
