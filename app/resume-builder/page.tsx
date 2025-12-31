@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, Suspense } from "react";
 import dynamic from "next/dynamic";
 import { ResumeShimmer } from "@/components/resume-shimmer";
 import { initialUserData } from "@/data/initial-user-data";
@@ -31,7 +31,7 @@ const isValidConfigKey = (key: string): key is ConfigKey => {
   return Object.keys(defaultConfig).includes(key);
 };
 
-export default function LandingPage() {
+function ResumeBuilderContent() {
   const searchParams = useSearchParams();
   const templateParam = searchParams.get('template');
 
@@ -322,5 +322,13 @@ export default function LandingPage() {
         </div>
       </div>
     </ErrorBoundary>
+  );
+}
+
+export default function LandingPage() {
+  return (
+    <Suspense fallback={<ResumeShimmer />}>
+      <ResumeBuilderContent />
+    </Suspense>
   );
 }
